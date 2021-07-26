@@ -1,3 +1,4 @@
+/*
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,5 +22,38 @@ function App() {
     </div>
   );
 }
+*/
+import React, {useState} from 'react';
+
+const App = () => {
+ const [count, setCount] = useState(0);
+
+ const increment = () => {
+  setCount(count + 1);
+ };
+
+ const decrement = () => {
+  setCount(count - 1);
+ };
+
+ const handleReset = () => {
+  setCount(0);
+ };
+ return (
+  <div className="container">
+   <span className="counter">{count}</span>
+   <button className="increment" onClick={increment}>
+    +
+   </button>
+   <button className="decrement" onClick={decrement}>
+    -
+   </button>
+
+   <button className="reset" onClick={handleReset}>
+    数値をリセット
+   </button>
+  </div>
+ );
+};
 
 export default App;
